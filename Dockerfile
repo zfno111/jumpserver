@@ -45,7 +45,6 @@ RUN set -ex \
 RUN set -ex \
     && git clone --depth=1 https://github.com/jumpserver/jumpserver.git \
     && git clone --depth=1 https://github.com/jumpserver/docker-guacamole.git \
-    && wget https://github.com/jumpserver/koko/releases/download/${VERSION}/koko-master-linux-amd64.tar.gz \
     && wget https://github.com/jumpserver/koko/archive/1.5.4.tar.gz \
     && tar xf koko-v54-linux-amd64.tar.gz \
     && mv kokodir koko \
