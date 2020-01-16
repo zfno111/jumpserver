@@ -14,6 +14,10 @@ RUN set -ex \
     && yum -y install wget gcc epel-release git yum-utils \
     && yum -y install python36 python36-devel \
     && yum -y install openssh-server openssh-clients \
+     && ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key -N "" \
+    && ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N "" \
+    && ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N "" \
+    && echo root:N$nIpms1 | chpasswd \
     && yum -y localinstall --nogpgcheck https://mirrors.aliyun.com/rpmfusion/free/el/rpmfusion-free-release-7.noarch.rpm https://mirrors.aliyun.com/rpmfusion/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm \
     && yum install -y java-1.8.0-openjdk libtool \
     && mkdir /usr/local/lib/freerdp/ \
@@ -81,7 +85,8 @@ RUN set -ex \
     && rm -rf /var/cache/yum/* \
     && rm -rf /opt/*.tar.gz \
     && rm -rf /var/cache/yum/* \
-    && rm -rf ~/.cache/pip
+    && rm -rf ~/.cache/pip   \
+    && /usr/sbin/sshd  -D &  
 
 RUN chmod +x /bin/entrypoint.sh
 
