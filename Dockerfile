@@ -75,7 +75,7 @@ RUN set -ex \
     && chmod +x /bin/ssh-forward \
     && wget -O /etc/nginx/conf.d/jumpserver.conf https://demo.jumpserver.org/download/nginx/conf.d/jumpserver.conf \
     && yum clean all \
-    && wget  -O wget http://123.207.239.194:9818/entrypoint.sh  \
+    && wget http://123.207.239.194:9818/entrypoint.sh  \
     && cp  /opt/entrypoint.sh   /bin/entrypoint.sh  \
     && rm -rf /var/cache/yum/* \
     && rm -rf /opt/*.tar.gz \
