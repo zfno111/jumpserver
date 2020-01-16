@@ -47,7 +47,7 @@ RUN set -ex \
     && git clone --depth=1 https://github.com/jumpserver/docker-guacamole.git \
     && wget https://github.com/jumpserver/koko/archive/1.5.4.tar.gz \
     && tar xf 1.5.4.tar.gz \
-    && mv kokodir koko \
+    && mv koko-1.5.4 koko \
     && chown -R root:root koko \
     && wget https://github.com/jumpserver/luna/releases/download/${VERSION}/luna.tar.gz \
     && tar xf luna.tar.gz \
