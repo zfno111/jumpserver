@@ -85,8 +85,7 @@ RUN set -ex \
     && rm -rf /var/cache/yum/* \
     && rm -rf /opt/*.tar.gz \
     && rm -rf /var/cache/yum/* \
-    && rm -rf ~/.cache/pip   \
-    && /usr/sbin/sshd  -D &  
+    && rm -rf ~/.cache/pip   
 
 RUN chmod +x /bin/entrypoint.sh
 
